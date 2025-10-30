@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1088087234337",
+    "project_id": "full-stack-app-dev24",
+    "storage_bucket": "full-stack-app-dev24.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088087234337:android:10cdad2284d108e884d060",
+        "android_client_info": {
+          "package_name": "com.example.ecomerce_24"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Ce020fLhxx1EJJ_2mWdpKjTudNRbxnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
