@@ -16,9 +16,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-        isCoreLibraryDesugaringEnabled = true
+        isCoreLibraryDesugaringEnabled = true  //add by menual
     }
-
+    //add by menual
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
@@ -26,7 +26,7 @@ android {
         // … your other dependencies …
         coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")   // add this line
     }
-
+    //add by menual
 
 //    defaultConfig {
 //        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
@@ -40,7 +40,7 @@ android {
 //    }
     defaultConfig {
         applicationId = "com.example.ecomerce_24"
-        minSdk = 23
+        minSdk = 23       //add by menual
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

@@ -10,7 +10,24 @@ class ProductView extends GetView<ProductController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true, title: Text("Products")),
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+        title: Text(
+          "Products",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Colors.white,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.shopping_bag, size: 25, color: Colors.white),
+          ),
+        ],
+      ),
       body: Obx(
         () => Padding(
           padding: const EdgeInsets.all(15),

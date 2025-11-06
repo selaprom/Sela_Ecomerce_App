@@ -10,7 +10,8 @@ class APIprovider {
       baseUrl: "http://10.0.2.2:8000/api",
       contentType: "application/json",
       responseType: ResponseType.json,
-
+      receiveTimeout: Duration(seconds: 60),
+      sendTimeout: Duration(seconds: 60),
       validateStatus: (status) {
         return status! < 500;
       },
@@ -139,6 +140,28 @@ class APIprovider {
         ),
       );
     } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Response> searchProduct(String name) async {
+    try {
+      return await _dio.get(
+        "/search",
+        data: {"name": name},
+        options: Options(
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": 'application/json',
+          },
+          validateStatus: (status) {
+            return status! < 500;
+          },
+          followRedirects: false,
+        ),
+      );
+    } catch (e) {
+      print("error:$e");
       rethrow;
     }
   }

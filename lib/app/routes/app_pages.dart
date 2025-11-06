@@ -59,7 +59,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SEARCH_PRODUCT,
-      page: () => const SearchProductView(),
+      page: () => SearchProductView(),
       binding: SearchProductBinding(),
     ),
     GetPage(
