@@ -97,18 +97,34 @@ class ProductView extends GetView<ProductController> {
                                     height: 150,
                                     width: 200,
                                   ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      color: Colors.deepPurple,
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: Text(
-                                        "\$${product.price}",
-                                        style: TextStyle(color: Colors.white),
+                                  Row(
+                                    spacing: 10,
+                                    children: [
+                                      Text(
+                                        "Name:${product.name}",
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
-                                    ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            5,
+                                          ),
+                                          color: Colors.deepPurple,
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Text(
+                                            "\$${product.price}",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                   Text("${product.description}"),
                                   ElevatedButton(
