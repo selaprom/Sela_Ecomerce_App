@@ -84,7 +84,7 @@ class SearchProductView extends GetView<SearchProductController> {
 
   get _appbarsliver {
     return SliverAppBar(
-      // backgroundColor: Colors.deepPurple.withAlpha(250),
+      backgroundColor: Colors.transparent,
       title: Text(
         "Search Product",
         style: TextStyle(

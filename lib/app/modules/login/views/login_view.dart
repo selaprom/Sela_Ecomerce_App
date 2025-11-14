@@ -13,7 +13,7 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: buildBody);
+    return Obx(() => Scaffold(body: buildBody));
   }
 
   get buildBody => Padding(
@@ -50,18 +50,28 @@ class LoginView extends GetView<LoginController> {
               }
             },
           ),
-          TextFormField(
-            controller: passwordController,
-            obscureText: true,
-            decoration: InputDecoration(
-              hintText: "Password",
-              border: OutlineInputBorder(),
+          SizedBox(
+            height: 60,
+            child: TextFormField(
+              controller: passwordController,
+              obscureText: !controller.visiblepass.value,
+              decoration: InputDecoration(
+                hintText: "Password",
+                suffixIcon: IconButton(
+                  onPressed: controller.visiblepassword,
+                  icon:
+                      controller.visiblepass.value == true
+                          ? Icon(Icons.visibility)
+                          : Icon(Icons.visibility_off_outlined),
+                ),
+                border: OutlineInputBorder(),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return "Password can't be Null";
+                }
+              },
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Password can't be Null";
-              }
-            },
           ),
 
           TextButton.icon(

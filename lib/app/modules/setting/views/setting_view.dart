@@ -11,32 +11,48 @@ class SettingView extends GetView<SettingController> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            ListTile(
-              onTap: () {
-                Get.toNamed(Routes.PROFILE);
-              },
-              trailing: Icon(Icons.navigate_next, size: 35),
-              leading: Icon(Icons.person, size: 40),
-              subtitle: Text("View Your Profile"),
-              title: Text(
-                "Profile",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        child: Obx(() {
+          return ListView(
+            children: [
+              ListTile(
+                onTap: () {
+                  Get.toNamed(Routes.PROFILE);
+                },
+                trailing: Icon(Icons.navigate_next, size: 35),
+                leading: Icon(Icons.person, size: 40),
+                subtitle: Text("View Your Profile"),
+                title: Text(
+                  "Profile",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            ListTile(
-              onTap: controller.removeToken,
-              trailing: Icon(Icons.navigate_next, size: 35),
-              leading: Icon(Icons.logout, size: 40),
-              subtitle: Text("Signout your account"),
-              title: Text(
-                "Signout",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ListTile(
+                onTap: controller.removeToken,
+                trailing: Icon(Icons.navigate_next, size: 35),
+                leading: Icon(Icons.logout, size: 40),
+                subtitle: Text("Signout your account"),
+                title: Text(
+                  "Signout",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-          ],
-        ),
+              ListTile(
+                onTap: controller.changeTheme,
+                trailing:
+                    !controller.ischangetheme.value
+                        ? Icon(Icons.light_mode, size: 30)
+                        : Icon(Icons.nightlight_round_outlined, size: 30),
+                leading: Icon(Icons.light_mode, size: 40),
+
+                subtitle: Text("Tap to change"),
+                title: Text(
+                  "Change Theme",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          );
+        }),
       ),
     );
   }

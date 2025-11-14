@@ -57,7 +57,7 @@ class MainView extends GetView<MainController> {
             initialRoute: Routes.PRODUCT,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
+            //backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.deepPurple,
             currentIndex: controller.current_index,

@@ -1,4 +1,5 @@
 import 'package:ecomerce_24/app/binding/api_binding.dart';
+import 'package:ecomerce_24/app/data/themes/my_thems.dart';
 import 'package:ecomerce_24/app/notification_service/notification_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -28,6 +29,9 @@ void main() async {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       initialBinding: APIbinding(),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      //themeMode: ThemeMode.system,
     ),
   );
 }

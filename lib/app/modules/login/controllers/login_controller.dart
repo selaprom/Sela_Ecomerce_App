@@ -7,6 +7,17 @@ import '../../../data/provider/api_provider.dart';
 class LoginController extends GetxController {
   final _apiProvider = Get.put(APIprovider());
   final box = GetStorage();
+  RxBool visiblepass = false.obs;
+  void visiblepassword() {
+    if (visiblepass.value == false) {
+      visiblepass.value = true;
+      print(visiblepass.value);
+    } else {
+      visiblepass.value = false;
+      print(visiblepass.value);
+    }
+  }
+
   Future login({required String email, required String password}) async {
     try {
       final response = await _apiProvider.login(
