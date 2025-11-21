@@ -14,7 +14,7 @@ class ProductView extends GetView<ProductController> {
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
         title: Text(
-          "Products",
+          "Products".tr,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,

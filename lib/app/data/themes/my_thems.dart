@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  primarySwatch: Colors.deepPurple,
+  primarySwatch: Colors.purple,
   useMaterial3: true,
   scaffoldBackgroundColor: lightBgColor,
   appBarTheme: AppBarTheme(
@@ -34,7 +34,7 @@ final ThemeData lightTheme = ThemeData(
 
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  primarySwatch: Colors.deepOrange,
+  primarySwatch: Colors.purple,
   useMaterial3: true,
   scaffoldBackgroundColor: darkBgColor,
   appBarTheme: AppBarTheme(

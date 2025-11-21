@@ -9,7 +9,12 @@ class SearchProductView extends GetView<SearchProductController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: _buildBodyScrollView);
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(body: _buildBodyScrollView),
+    );
   }
 
   get _buildBodyScrollView {
@@ -86,7 +91,7 @@ class SearchProductView extends GetView<SearchProductController> {
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       title: Text(
-        "Search Product",
+        "Search Product".tr,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 25,

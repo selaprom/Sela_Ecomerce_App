@@ -1,5 +1,7 @@
 import 'package:ecomerce_24/app/binding/api_binding.dart';
 import 'package:ecomerce_24/app/data/themes/my_thems.dart';
+import 'package:ecomerce_24/app/data/translation/translate.dart';
+import 'package:ecomerce_24/app/modules/setting/controllers/setting_controller.dart';
 import 'package:ecomerce_24/app/notification_service/notification_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -22,6 +24,8 @@ void main() async {
   await NotificationService().initialize();
   await GetStorage.init();
 
+  final themeController = Get.put(SettingController());
+  //await themeController.onInitTheme();
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -31,7 +35,15 @@ void main() async {
       initialBinding: APIbinding(),
       theme: lightTheme,
       darkTheme: darkTheme,
+      themeMode:
+          themeController.ischangetheme.value
+              ? ThemeMode.light
+              : ThemeMode.dark,
+
       //themeMode: ThemeMode.system,
+      translations: AppTranslation(),
+      locale: Locale('en', 'US'),
+      fallbackLocale: Locale('en', 'UK'),
     ),
   );
 }
